@@ -1,0 +1,8 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="horizontal_margin">4dp</dimen>
+    <dimen name="horizontal_otp_margin">4dp</dimen>
+    <dimen name="et_width">22dp</dimen>
+    <dimen name="vertical_margin">16dp</dimen>
+    <dimen name="et_height">25dp</dimen>
+</resources>

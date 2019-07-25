@@ -1,0 +1,4 @@
+#Thu Jul 25 07:06:21 PDT 2019
+base.0=D\:\\eCatalogue2\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\1
+path.0=classes.dex
+renamed.0=classes.dex

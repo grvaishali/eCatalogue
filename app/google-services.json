@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "913887357485",
+    "firebase_url": "https://ecatalogue-fdbcd.firebaseio.com",
+    "project_id": "ecatalogue-fdbcd",
+    "storage_bucket": "ecatalogue-fdbcd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:913887357485:android:389f13e525b8b92d",
+        "android_client_info": {
+          "package_name": "com.e.ecatalogue"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "913887357485-fp4b20dsejv919lhfpi31nqn9incpf3t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLAO7R_W-MyEy9SrBXCINxUfCELVgl0As"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "913887357485-fp4b20dsejv919lhfpi31nqn9incpf3t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

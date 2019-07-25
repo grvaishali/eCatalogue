@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">eCatalogue</string>
+
+        <string name="phone_number">PHONE NUMBER</string>
+        <string name="otp">OTP</string>
+        <string name="resend">RESEND</string>
+        <string name="hiphen">-</string>
+    <string name="verify">Verify</string>
+    <string name="send">Send OTP</string>
+
+
+</resources>
