@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.FirebaseTooManyRequestsException;
 import com.google.firebase.auth.AuthResult;
@@ -112,11 +113,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sendSms(View view) {
-//        String number = "+91"+editText1.getText().toString() + editText2.getText().toString() + editText3.getText().toString() +
-//                editText4.getText().toString() + editText5.getText().toString() + editText6.getText().toString() +
-//                editText7.getText().toString() + editText8.getText().toString()
-//                + editText9.getText().toString() + editText10.getText().toString();
-        String number = "+919999254929";
+        String number = "+91"+editText1.getText().toString() + editText2.getText().toString() + editText3.getText().toString() +
+                editText4.getText().toString() + editText5.getText().toString() + editText6.getText().toString() +
+                editText7.getText().toString() + editText8.getText().toString()
+                + editText9.getText().toString() + editText10.getText().toString();
+        Log.i("Phone number",number);
+        //String number = "+919999254929";
         PhoneAuthProvider.getInstance().verifyPhoneNumber( number, 60, TimeUnit.SECONDS, this, mCallbacks );
 
     }
@@ -128,15 +130,30 @@ public class MainActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     Toast.makeText( getApplicationContext(), "User Verified", Toast.LENGTH_SHORT ).show();
                 }
+                else{
+                    String message = "Somthing is wrong, we will fix it soon...";
+
+                    if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
+                        message = "Invalid code entered...";
+                    }
+                    Snackbar snackbar = Snackbar.make(findViewById(R.id.parent), message, Snackbar.LENGTH_LONG);
+                    snackbar.setAction("Dismiss", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                        }
+                    });
+                    snackbar.show();
+                }
             }
         } );
 
     }
 
     public void verifyOTP(View view) {
-//        String inputCode = editTextOTP1.getText().toString() + editTextOTP2.getText().toString() + editTextOTP3.getText().toString() +
-//                editTextOTP4.getText().toString() + editTextOTP5.getText().toString() + editTextOTP6.getText().toString();
-        String inputCode = "123456";
+        String inputCode = editTextOTP1.getText().toString() + editTextOTP2.getText().toString() + editTextOTP3.getText().toString() +
+                editTextOTP4.getText().toString() + editTextOTP5.getText().toString() + editTextOTP6.getText().toString();
+       // String inputCode = "123456";
         verifyPhoneNumber( verficationCode, inputCode );
 
     }
