@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.e.catalogueList.ItemFragment.OnListFragmentInteractionListener;
 import com.e.catalogueList.dummy.DummyContent.DummyItem;
+import com.e.ecatalogue.R;
 
 import java.util.List;
 

@@ -282,8 +282,21 @@
                     android:onClick="verifyOTP"/>
             </androidx.appcompat.widget.LinearLayoutCompat>
         </TableRow>
+        <TableRow>
+            <Button
+                android:id="@+id/updateButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="6dp"
+                android:background="@drawable/round"
+                android:text="@string/update"
+                android:onClick="update"/>
+
+        </TableRow>
 
 
-    </TableLayout>
+
+
+</TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
