@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.e.DataValue;
 import com.e.com.e.user.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -25,7 +26,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+
 
 import java.io.InputStream;
 import java.util.Properties;
@@ -44,13 +45,14 @@ public class MainActivity extends AppCompatActivity {
     private TextView textPhoneNumber;
     boolean devMode = true;
     String verficationCode;
+
     PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
+        // ref = new DatabaseReference();
         Properties properties = new Properties();
         InputStream inputStream =
                 this.getClass().getClassLoader().getResourceAsStream("local.properties");
@@ -100,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
         buttonSendOTP = findViewById(R.id.sendButton);
         verify = findViewById(R.id.verifyButton);
 
+        // ref=new DatabaseReference();
         mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
 
             @Override
@@ -154,9 +157,10 @@ public class MainActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     FirebaseUser user = task.getResult().getUser();
-                    createUser("1","Shashank","Shashank","123456");
-                    createUser("2","Vaishali","Vaishali","123456");
-                    createUser("3","Khushi","Khushi","123456");
+
+                    InsertOnCloud.create("45", "Shashank", "Shashank", "123456");
+//                    DataValue.createUser("2", "Vaishali", "Vaishali", "123456");
+//                    DataValue.createUser("3", "Khushi", "Khushi", "123456");
                     Toast.makeText(getApplicationContext(), "User Verified", Toast.LENGTH_SHORT).show();
                 } else {
                     String message = "Somthing is wrong, we will fix it soon...";
@@ -178,30 +182,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void createUser(String uid, String name, String password, String phone) {
-        User user = new User();
-        user.setU_id(uid);
-        user.setName(name);
-        user.setPassword(password);
-        user.setPhoneNumber(phone);
-        user.setSecurity_level("1");
-        FirebaseDatabase.getInstance().getReference().child(getString(R.string.dbnode_users)).
-                child(uid).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                FirebaseAuth.getInstance().signOut();
-                Toast.makeText(MainActivity.this, "succesful", Toast.LENGTH_SHORT).show();
-
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                e.printStackTrace();
-                Toast.makeText(MainActivity.this, "something went wrong", Toast.LENGTH_SHORT).show();
-
-            }
-        });
-    }
 
     public void verifyOTP(View view) {
         String inputCode;
@@ -220,14 +200,8 @@ public class MainActivity extends AppCompatActivity {
         signInWithPhone(credential);
     }
 
+
     public void update(View view) {
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
-        //Change Name
-
-        reference.child(getString(R.string.dbnode_users))
-                .child("1").child(getString(R.string.field_name))
-                .setValue("Jiyana");
-        Toast.makeText(getApplicationContext(), "Successful", Toast.LENGTH_SHORT).show();
-
+        DataValue.update(view);
     }
 }

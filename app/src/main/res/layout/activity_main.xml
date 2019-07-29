@@ -21,7 +21,6 @@
         app:layout_constraintVertical_bias="0.052">
 
 
-
     </com.google.android.material.appbar.AppBarLayout>
 
     <TableLayout
@@ -175,15 +174,17 @@
                     android:textAlignment="center" />
             </androidx.appcompat.widget.LinearLayoutCompat>
         </TableRow>
+
         <TableRow>
+
             <Button
                 android:id="@+id/sendButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="6dp"
                 android:background="@drawable/round"
-                android:text="@string/send"
-                android:onClick="sendSms"/>
+                android:onClick="sendSms"
+                android:text="@string/send" />
         </TableRow>
 
         <TableRow>
@@ -278,25 +279,25 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="6dp"
                     android:background="@drawable/round"
-                    android:text="@string/verify"
-                    android:onClick="verifyOTP"/>
+                    android:onClick="verifyOTP"
+                    android:text="@string/verify" />
             </androidx.appcompat.widget.LinearLayoutCompat>
         </TableRow>
+
         <TableRow>
+
             <Button
                 android:id="@+id/updateButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="6dp"
                 android:background="@drawable/round"
-                android:text="@string/update"
-                android:onClick="update"/>
+                android:onClick="update"
+                android:text="@string/update" />
 
         </TableRow>
 
 
-
-
-</TableLayout>
+    </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

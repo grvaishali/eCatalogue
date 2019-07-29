@@ -62,6 +62,7 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         public final View mView;
         public final TextView mIdView;
         public final TextView mContentView;
+        public TextView mCodeView,mPrice;
         public DummyItem mItem;
 
         public ViewHolder(View view) {
@@ -69,6 +70,8 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
             mView = view;
             mIdView = (TextView) view.findViewById( R.id.item_number );
             mContentView = (TextView) view.findViewById( R.id.content );
+            mCodeView=(TextView) view.findViewById( R.id.code );
+            mPrice=(TextView) view.findViewById( R.id.price );
         }
 
         @Override
