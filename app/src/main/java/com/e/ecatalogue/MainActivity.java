@@ -2,6 +2,7 @@ package com.e.ecatalogue;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -9,7 +10,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.ViewCompat;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.e.DataValue;
 import com.e.com.e.user.User;
@@ -29,6 +35,7 @@ import com.google.firebase.database.DatabaseReference;
 
 
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -43,8 +50,15 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonSendOTP;
     private Button verify;
     private TextView textPhoneNumber;
+    ReadFromCloud read;
     boolean devMode = true;
     String verficationCode;
+    private static RecyclerView.Adapter adapter;
+    private RecyclerView.LayoutManager layoutManager;
+    private static RecyclerView recyclerView;
+    private static ArrayList<ListDataModel> data;
+    static View.OnClickListener myOnClickListener;
+    private static ArrayList<Integer> removedItems;
 
     PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
 
@@ -59,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             properties.load(inputStream);
         } catch (Exception e) {
-            e.printStackTrace();
+            // e.printStackTrace();
         }
         devMode = Boolean.valueOf(properties.getProperty("devmode"));
 
@@ -101,6 +115,8 @@ public class MainActivity extends AppCompatActivity {
         EditedListener.listen(editTextOTP5, editTextOTP6);
         buttonSendOTP = findViewById(R.id.sendButton);
         verify = findViewById(R.id.verifyButton);
+        getListView();
+        read = new ReadFromCloud();
 
         // ref=new DatabaseReference();
         mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
@@ -203,5 +219,45 @@ public class MainActivity extends AppCompatActivity {
 
     public void update(View view) {
         DataValue.update(view);
+    }
+
+    public void getListView() {
+        recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+        recyclerView.setHasFixedSize(true);
+
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        data = new ReadFromCloud().read();
+//        data = new ArrayList<ListDataModel>();
+//
+//
+//        data.add(new ListDataModel(
+//                "good",
+//                "123", 1, 1, 1));
+//        data.add(new ListDataModel(
+//                "abc",
+//                "1234", 12, 12, 12));
+//        data.add(new ListDataModel(
+//                "def",
+//                "1234", 14, 14,12 ));
+
+
+        removedItems = new ArrayList<Integer>();
+
+        adapter = new CustomAdapter(data);
+        recyclerView.setAdapter(adapter);
+    }
+}
+@RequiresApi(28)
+class OnUnhandledKeyEventListenerWrapper implements View.OnUnhandledKeyEventListener {
+    private ViewCompat.OnUnhandledKeyEventListenerCompat mCompatListener;
+
+    OnUnhandledKeyEventListenerWrapper(ViewCompat.OnUnhandledKeyEventListenerCompat listener) {
+        this.mCompatListener = listener;
+    }
+
+    public boolean onUnhandledKeyEvent(View v, KeyEvent event) {
+        return this.mCompatListener.onUnhandledKeyEvent(v, event);
     }
 }
