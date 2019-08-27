@@ -1,10 +1,14 @@
 package com.e.ecatalogue.Fragment;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.TranslateAnimation;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -35,8 +39,17 @@ public class OfferFragment extends Fragment implements OnCompleteListener<QueryS
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_offer, container,false);
+        View view = inflater.inflate(R.layout.fragment_offer, container, false);
         offerTextView = view.findViewById(R.id.offer_textView);
+        TranslateAnimation animation = new TranslateAnimation(0.0f, 700.0f, 0.0f, 0.0f);
+        offerTextView.setTextColor(Color.RED);
+        offerTextView.setTextSize(20);
+        animation.setDuration(7000); // animation duration
+        animation.setRepeatCount(-1); // animation repeat count
+        animation.setRepeatMode(0); // repeat animation (left to right, right to left)
+        animation.setFillAfter(true);
+        offerTextView.startAnimation(animation);
+        //offerTextView.startAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.move));
         getOffer();
         return view;
     }
@@ -55,4 +68,6 @@ public class OfferFragment extends Fragment implements OnCompleteListener<QueryS
     public void getOffer() {
         getInstance().getBannerImages(this);
     }
+
+
 }

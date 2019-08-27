@@ -43,16 +43,17 @@ dependencies {
 
     implementation 'com.google.firebase:firebase-database:18.0.1'
     implementation 'com.google.firebase:firebase-storage:18.1.1'
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
 
 //    implementation 'com.github.bumptech.glide:glide:4.9.0'
 //    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
-    implementation ("com.github.bumptech.glide:glide:4.9.0") {
+    implementation("com.github.bumptech.glide:glide:4.9.0") {
         exclude group: "com.android.support"
     }
     annotationProcessor 'androidx.annotation:annotation:1.0.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
-    implementation ("com.github.bumptech.glide:glide:4.9.0@aar") {
+    implementation("com.github.bumptech.glide:glide:4.9.0@aar") {
         transitive = true
     }
 
@@ -60,10 +61,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore:20.2.0'
 
 
-
-
-
-
 }
 
 apply plugin: 'com.google.gms.google-services'
+com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true

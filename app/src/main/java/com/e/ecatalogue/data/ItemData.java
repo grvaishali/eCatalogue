@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class ItemData implements Serializable {
     private String code;
+    private String name;
     private String description;
     private String brand;
     private String category;
@@ -12,15 +13,6 @@ public class ItemData implements Serializable {
 
     public ItemData() {
 
-    }
-
-    public ItemData(String code, String description, String brand, String category, String price, String imageUrl) {
-        this.code = code;
-        this.description = description;
-        this.brand = brand;
-        this.category = category;
-        this.price = price;
-        this.imageUrl = imageUrl;
     }
 
     public String getCode() {
@@ -69,5 +61,13 @@ public class ItemData implements Serializable {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

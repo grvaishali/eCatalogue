@@ -2,15 +2,23 @@ package com.e.ecatalogue.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.WindowManager;
+import android.widget.TextView;
 
 import com.e.ecatalogue.BrandsAdapter;
+import com.e.ecatalogue.ContactUsActivityy;
 import com.e.ecatalogue.Fragment.MainBannerFragment;
 import com.e.ecatalogue.Fragment.OfferFragment;
 import com.e.ecatalogue.data.BrandData;
@@ -29,21 +37,27 @@ public class BrandsActivity extends AppCompatActivity implements OnCompleteListe
     private static RecyclerView.Adapter brandsAdapter;
     private RecyclerView.LayoutManager layoutManager;
     private static RecyclerView recyclerBrandsView;
+    FragmentManager manager;
+    FragmentTransaction transaction;
+    TextView view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_brands);
-        FragmentManager manager = getSupportFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
-        MainBannerFragment bannerFragment = new MainBannerFragment();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        manager = getSupportFragmentManager();
+        transaction = manager.beginTransaction();
+
+       // MainBannerFragment bannerFragment = new MainBannerFragment();
         OfferFragment offerFragment = new OfferFragment();
-        transaction.add(R.id.bannerFragment, bannerFragment, "Banner Fragment");
-        transaction.add(R.id.offerFragment,offerFragment,"Offer Fragment");
-        bannerFragment.getImage();
+       // transaction.add(R.id.bannerFragment, bannerFragment, "Banner Fragment");
+        transaction.add(R.id.offerFragment, offerFragment, "Offer Fragment");
+        //bannerFragment.getImage();
         offerFragment.getOffer();
         transaction.commit();
         getBrandsView();
+
     }
 
     @Override
@@ -61,14 +75,69 @@ public class BrandsActivity extends AppCompatActivity implements OnCompleteListe
             recyclerBrandsView.setItemAnimator(new DefaultItemAnimator());
             brandsAdapter = new BrandsAdapter(brandsList, this);
             recyclerBrandsView.setAdapter(brandsAdapter);
+        }else {
+            Log.e("getBrands", task.getException().getMessage());
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // return super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+//            case android.R.id.home:
+//                NavUtils.navigateUpFromSameTask(BrandsActivity.this);
+//                return true;
+
+            case R.id.exit:
+                finish();
+                return true;
+
+            case R.id.info:
+                startActivity(new Intent(BrandsActivity.this,AboutUsActivity.class));
+
+                return true;
+
+
+
+            case R.id.termsCondition:
+
+                startActivity(new Intent(BrandsActivity.this,TermsConditionActivity.class));
+                return true;
+
+
+            case R.id.contactUs:
+                startActivity(new Intent(BrandsActivity.this, ContactUsActivityy.class));
+                return true;
+
+
+
+            case R.id.culture:
+                startActivity(new Intent(BrandsActivity.this, CultureActivity.class));
+                return true;
+
+        }
+
+
+        return super.onOptionsItemSelected(item);
+    }
 
     public void getBrandsView() {
         recyclerBrandsView = (RecyclerView) findViewById(R.id.brands_view);
         recyclerBrandsView.setHasFixedSize(true);
         FirebaseManager.getInstance().getAllBrands(this);
+        hideSoftKeyboard();
+
     }
+    private void hideSoftKeyboard() {
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+    }
+
 }
 

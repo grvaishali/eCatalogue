@@ -12,16 +12,56 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".Activity.ItemDetailsActivity"></activity>
-        <activity android:name=".Activity.ItemsActivity" />
-        <activity android:name=".Activity.CategoriesActivity" />
-        <activity android:name=".Activity.BrandsActivity" />
-        <activity android:name=".Activity.RegisterActivity" />
-        <activity android:name=".Activity.LoginActivity">
+        android:theme="@style/AppTheme">
+        <activity android:name=".ContactUsActivityy"></activity>
+        <activity
+            android:name=".Activity.TermsConditionActivity"
+            />
+        <activity
+            android:name=".Activity.CultureActivity"
+          />
+        <activity
+            android:name=".Activity.AboutUsActivity"
+             />
+        <activity
+            android:name=".CultureActivity"
+           />
+        <activity android:name=".Activity.ItemDetailsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.e.ecatalogue.Activity.ItemsActivity" />
+        </activity>
+        <activity android:name=".Activity.ItemsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.e.ecatalogue.Activity.CategoriesActivity" />
 
+        </activity>
+        <activity android:name=".Activity.CategoriesActivity"
+          >
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.e.ecatalogue.Activity.BrandsActivity" />
+        </activity>
+        <activity
+            android:name=".Activity.BrandsActivity"
+            android:label="@string/app_name">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.e.ecatalogue.Activity.LoginActivity" />
+        </activity>
+        <activity android:name=".Activity.RegisterActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.e.ecatalogue.MainActivity" />
+        </activity>
+        <activity android:name=".Activity.LoginActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.e.ecatalogue.MainActivity" />
         </activity>
         <activity
             android:name=".MainActivity"

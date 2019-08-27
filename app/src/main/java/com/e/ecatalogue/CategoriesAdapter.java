@@ -5,7 +5,10 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,9 +22,10 @@ import com.e.ecatalogue.data.CategoryData;
 
 import java.util.ArrayList;
 
-public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.CategoryViewHolder> {
+public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.CategoryViewHolder>  implements Filterable {
     private ArrayList<CategoryData> categoryList;
     private Context context;
+
 
     @NonNull
     @Override
@@ -52,20 +56,33 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Ca
         return categoryList.size();
     }
 
+    @Override
+    public Filter getFilter() {
+        return null;
+    }
+
     public static class CategoryViewHolder extends RecyclerView.ViewHolder {
         CardView parentCardView;
+
         TextView textViewDescription;
 
         public CategoryViewHolder(View itemView) {
             super(itemView);
             this.parentCardView = itemView.findViewById(R.id.category_card_view);
             this.textViewDescription = itemView.findViewById(R.id.category_name);
+
         }
     }
 
     public CategoriesAdapter(ArrayList<CategoryData> categoryList, Context context) {
         this.categoryList = categoryList;
-        this.context=context;
+        this.context = context;
     }
+
+    public void filterList(ArrayList<CategoryData> filteredCategoryList) {
+        categoryList = filteredCategoryList;
+        notifyDataSetChanged();
+    }
+
 }
 

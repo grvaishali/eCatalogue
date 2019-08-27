@@ -9,16 +9,18 @@
 
     <ImageView
         android:id="@+id/fragment_main_banner_imageView_banner"
-        android:layout_width="411dp"
+        android:layout_width="match_parent"
         android:layout_height="339dp"
         android:layout_weight="1"
+        android:padding="2dp"
         android:adjustViewBounds="true" />
 
     <ImageView
         android:id="@+id/fragment_main_banner_imageView_logo"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_weight="1"
+        android:padding="2dp"
         android:adjustViewBounds="true" />
 
 </RelativeLayout>

@@ -6,20 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Activity.LoginActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
 
-        android:layout_marginBottom="132dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.052">
-
-
-    </com.google.android.material.appbar.AppBarLayout>
 
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -41,14 +28,17 @@
                 android:orientation="vertical"
                 android:padding="20dp">
 
+                <TextView
+                    android:id="@+id/signIn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center"
+                    android:text="@string/signIn"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textSize="25sp" />
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:contentDescription="@string/logo"
-                    android:src="@drawable/common_google_signin_btn_icon_dark" />
 
                 <EditText
                     android:id="@+id/email"
@@ -82,38 +72,29 @@
 
                 <Button
                     android:id="@+id/email_sign_in_button"
-                    style="?android:textAppearanceSmall"
-                    android:layout_width="match_parent"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center"
+                    android:background="@color/colorPrimary"
                     android:layout_marginTop="30dp"
-                    android:background="@drawable/round"
                     android:text="@string/sign_in"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textStyle="bold" />
 
-                <RelativeLayout
-                    android:id="@+id/relLayout1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
 
+                <Button
+                    android:id="@+id/forgot_password"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center"
+                    android:background="@color/colorPrimary"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:text="@string/forgot_password"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold" />
 
-
-
-                    <Button
-                        android:id="@+id/forgot_password"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="20dp"
-                        android:background="@color/colorPrimary"
-                        android:gravity="center"
-                        android:text="@string/forgot_password"
-                        android:textColor="@color/linkBlue"
-                        android:textSize="16sp" />
-
-
-
-                </RelativeLayout>
 
             </LinearLayout>
 
@@ -125,7 +106,6 @@
             android:layout_height="150dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="200dp"
-            android:background="@color/colorPrimary"
             android:visibility="invisible" />
 
     </RelativeLayout>

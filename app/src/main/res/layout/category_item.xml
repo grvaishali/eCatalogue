@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/category_card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/layout_padding"
-    card_view:cardBackgroundColor="@color/colorTextBackground"
+    android:layout_marginLeft="@dimen/card_margin_horizontal"
+    android:layout_marginRight="@dimen/card_margin_right"
+    card_view:cardCornerRadius="6dp"
+    card_view:cardElevation="6dp"
+    card_view:cardPreventCornerOverlap="false"
+    tools:context="com.e.ecatalogue.Activity.CategoriesActivity">
 
-    card_view:cardCornerRadius="@dimen/elevation_radius"
-    card_view:cardElevation="@dimen/elevation_radius"
-    >
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
-        android:layout_marginBottom="0dp"
+        android:layout_marginBottom="1dp"
         android:background="@color/colorPrimaryDark"
         android:focusableInTouchMode="true"
         android:orientation="vertical"
@@ -24,14 +26,11 @@
 
         <TextView
             android:id="@+id/category_name"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="1"
             android:padding="1dp"
-            android:text="Brand"
-            android:textAlignment="center"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:layout_gravity="left"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

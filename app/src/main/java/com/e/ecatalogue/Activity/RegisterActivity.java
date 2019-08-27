@@ -2,10 +2,13 @@ package com.e.ecatalogue.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -13,6 +16,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.e.ecatalogue.ContactUsActivityy;
 import com.e.ecatalogue.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -30,6 +34,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mEmail = (EditText) findViewById(R.id.input_email);
         mPassword = (EditText) findViewById(R.id.input_password);
         mConfirmPassword = (EditText) findViewById(R.id.input_confirm_password);
@@ -161,6 +166,48 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void hideSoftKeyboard() {
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case R.id.home:
+                startActivity(new Intent(RegisterActivity.this, BrandsActivity.class));
+
+                return true;
+
+
+            case R.id.info:
+                startActivity(new Intent(RegisterActivity.this, AboutUsActivity.class));
+
+                return true;
+
+
+            case R.id.termsCondition:
+
+                startActivity(new Intent(RegisterActivity.this, TermsConditionActivity.class));
+                return true;
+
+
+            case R.id.contactUs:
+                startActivity(new Intent(RegisterActivity.this, ContactUsActivityy.class));
+                return true;
+
+
+            case R.id.culture:
+                startActivity(new Intent(RegisterActivity.this, CultureActivity.class));
+                return true;
+
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // return super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
     }
 
 }

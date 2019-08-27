@@ -2,6 +2,7 @@ package com.e.ecatalogue;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,13 +38,18 @@ public class BrandsAdapter extends RecyclerView.Adapter<BrandsAdapter.BrandsView
         final Context imageContext = holder.imageViewIcon.getContext();
         TextView textViewDescription = holder.textViewDescription;
         ImageView imageViewIcon = holder.imageViewIcon;
+        CardView view=holder.parentCardView;
         textViewDescription.setText(brandsList.get(listPosition).getName());
+
+
         holder.parentCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, CategoriesActivity.class);
                 intent.putExtra(ECatalogueConstants.BRAND, brandsList.get(listPosition).getName());
+
                 context.startActivity(intent);
+
             }
         });
         try {
@@ -53,6 +59,7 @@ public class BrandsAdapter extends RecyclerView.Adapter<BrandsAdapter.BrandsView
         } catch (Exception e) {
             Log.e("LoadBrandImage", e.getMessage(), e);
         }
+
     }
 
     @Override

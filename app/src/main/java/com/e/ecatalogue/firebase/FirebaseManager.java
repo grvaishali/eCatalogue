@@ -16,6 +16,7 @@ public class FirebaseManager {
     public static final String ITEM_CODE = "code";
     public static final String ITEM_DESCRIPTION = "description";
     public static final String ITEM_IMAGEURL = "imageurl";
+    public static final String ITEM_NAME = "name";
     public static final String ITEM_PRICE = "price";
     public static final String ITEM_CATEGORY = "category";
     public static final String ITEM_BRAND = "brand";
@@ -24,12 +25,13 @@ public class FirebaseManager {
     public static final String CATEGORY_BRAND = "brand";
     public static final String BRAND_IMAGEURL = "imageurl";
     public static final String MASTER_MAIN_BANNER_URL = "mainbannerurl";
-    public static final String MASTER_LOGO_IMAGE_URL="logoimageurl";
+    public static final String MASTER_LOGO_IMAGE_URL = "logoimageurl";
     public static final String MASTER_MAIN_PROMOTION_TEXT = "promotiontext";
     public static final String COLLECTION_ITEMS = "items";
     public static final String COLLECTION_BRANDS = "brands";
     public static final String COLLECTION_CATEGORIES = "categories";
     public static final String COLLECTION_MASTER = "master";
+    public static final String CATEGORIES_ALL = "ALL";
     private static FirebaseFirestore db = null;
     private static FirebaseManager firebaseManager = null;
 
@@ -45,15 +47,25 @@ public class FirebaseManager {
     }
 
     public void getAllItems(OnCompleteListener<QuerySnapshot> onCompleteListener, String category, String brand) {
-        getInstance().getDb().collection(COLLECTION_ITEMS).whereEqualTo(ITEM_CATEGORY, category).whereEqualTo(ITEM_BRAND, brand).get().addOnCompleteListener(onCompleteListener);
+        Log.i("getAllItems ", category + ", " + brand);
+        if (brand.equals(CATEGORIES_ALL)) {
+            getInstance().getDb().collection(COLLECTION_ITEMS).whereEqualTo(ITEM_CATEGORY, category).orderBy(ITEM_CODE).get().addOnCompleteListener(onCompleteListener);
+        } else {
+            getInstance().getDb().collection(COLLECTION_ITEMS).whereEqualTo(ITEM_CATEGORY, category).whereEqualTo(ITEM_BRAND, brand).orderBy(ITEM_CODE).get().addOnCompleteListener(onCompleteListener);
+        }
     }
 
     public void getAllBrands(OnCompleteListener<QuerySnapshot> onCompleteListener) {
-        getInstance().getDb().collection(COLLECTION_BRANDS).get().addOnCompleteListener(onCompleteListener);
+        getInstance().getDb().collection(COLLECTION_BRANDS).orderBy(BRAND_NAME).get().addOnCompleteListener(onCompleteListener);
     }
 
     public void getAllCategories(OnCompleteListener<QuerySnapshot> onCompleteListener, String brandName) {
-        getInstance().getDb().collection(COLLECTION_CATEGORIES).whereEqualTo(CATEGORY_BRAND, brandName).get().addOnCompleteListener(onCompleteListener);
+        Log.i("getAllCategories ", brandName );
+        if (brandName.equals(CATEGORIES_ALL)) {
+            getInstance().getDb().collection(COLLECTION_CATEGORIES).orderBy(CATEGORY_NAME).get().addOnCompleteListener(onCompleteListener);
+        } else {
+            getInstance().getDb().collection(COLLECTION_CATEGORIES).whereEqualTo(CATEGORY_BRAND, brandName).orderBy(CATEGORY_NAME).get().addOnCompleteListener(onCompleteListener);
+        }
     }
 
     public void getBannerImages(OnCompleteListener<QuerySnapshot> onCompleteListener) {

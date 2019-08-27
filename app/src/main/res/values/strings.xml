@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">eCatalogue</string>
+    <string name="app_name">GEEKEN</string>
 
     <string name="phone_number">PHONE NUMBER</string>
     <string name="otp">OTP</string>
@@ -66,9 +66,23 @@
     <string name="offer">Offer of the day</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="sign_up">I Already Have An account</string>
     <string name="new_user">Get Started</string>
+    <string name="signIn">WELCOME!</string>
 
+    <!--Search -->
+    <string name="app_label"> Search Feature</string>
+    <string name="search_hint">Search Fruit</string>
+    <string name="search_items">Search Items</string>
 
+    <!--About Us-->
+    <string name="aboutUs"></string>
+    <string name="title_activity_about_us">AboutUsActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_culture">CultureActivity</string>
+    <string name="title_activity_contact_us">ContactUsActivity</string>
+    <string name="title_activity_terms_condition">TermsConditionActivity</string>
 </resources>

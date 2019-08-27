@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.e.ecatalogue.Activity.ItemDetailsActivity;
+import com.e.ecatalogue.data.CategoryData;
 import com.e.ecatalogue.data.ItemData;
 
 import java.util.ArrayList;
@@ -37,8 +38,10 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
         TextView textViewDescription = holder.textViewDescription;
         TextView textViewCode = holder.textViewCode;
         TextView textViewPrice = holder.textViewPrice;
+        TextView textViewName = holder.textViewName;
         ImageView imageViewIcon = holder.imageViewIcon;
         textViewDescription.setText(itemsList.get(listPosition).getDescription());
+        textViewName.setText(itemsList.get(listPosition).getName());
         textViewCode.setText(itemsList.get(listPosition).getCode());
         textViewPrice.setText(String.valueOf(itemsList.get(listPosition).getPrice()));
         try {
@@ -53,9 +56,9 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(context, ItemDetailsActivity.class);
-                        intent.putExtra(ECatalogueConstants.ITEM, itemsList.get(listPosition));
-                        context.startActivity(intent);
+//                        Intent intent = new Intent(context, ItemDetailsActivity.class);
+//                        intent.putExtra(ECatalogueConstants.ITEM, itemsList.get(listPosition));
+//                        context.startActivity(intent);
                     }
                 }
         );
@@ -71,6 +74,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
         TextView textViewDescription;
         TextView textViewCode;
         TextView textViewPrice;
+        TextView textViewName;
         ImageView imageViewIcon;
 
         public ItemViewHolder(View itemView) {
@@ -79,13 +83,19 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
             this.textViewCode = (TextView) itemView.findViewById(R.id.code);
             this.textViewPrice = (TextView) itemView.findViewById(R.id.price);
             this.imageViewIcon = (ImageView) itemView.findViewById(R.id.imageView);
-            parentCardView=  itemView.findViewById(R.id.item_card_view);
+            this.textViewName = (TextView) itemView.findViewById(R.id.name);
+            parentCardView = itemView.findViewById(R.id.item_card_view);
         }
     }
 
     public ItemsAdapter(ArrayList<ItemData> data, Context context) {
         this.itemsList = data;
         this.context = context;
+    }
+
+    public void filterList(ArrayList<ItemData> filteredItemsList) {
+        itemsList = filteredItemsList;
+        notifyDataSetChanged();
     }
 
 
