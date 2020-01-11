@@ -17,7 +17,7 @@ eCatalogue is a mobile based product catalogue application. The purpose is remov
   - Uses Room for database management
   - Uses Butterknife for view binding
   - Uses Glide for fetching images
-  - Crashltics integration
+  - Crashlytics integration
 
 ## Installation
   - Setup a firebase account
