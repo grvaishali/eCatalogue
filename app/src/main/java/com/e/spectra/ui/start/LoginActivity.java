@@ -1,4 +1,4 @@
-package com.e.spectra.ui.model;
+package com.e.spectra.ui.start;
 
 import android.app.Activity;
 import android.app.NotificationChannel;
@@ -29,7 +29,6 @@ import com.e.spectra.services.impl.NotificationJobService;
 
 import com.e.spectra.factory.NotificationFactory;
 import com.e.spectra.model.AuthViewModel;
-import com.e.spectra.ui.home.BrandsActivity;
 import com.e.spectra.ui.navigation.NavigationActivity;
 import com.e.spectra.ui.view.AuthListener;
 import com.e.spectra.util.ViewUtil;

@@ -34,7 +34,7 @@ public class AuthViewModel extends ViewModel {
 
     public void onLoginButtonClick(View view) {
         authListener.onStarted();
-        if (null==email || email.isEmpty() || null == password || password.isEmpty()) {
+        if (null == email || email.isEmpty() || null == password || password.isEmpty()) {
             authListener.onFailed("Please enter valid emailId and Password");
             return;
         }
@@ -46,22 +46,7 @@ public class AuthViewModel extends ViewModel {
 
     public void onForgotPasswordButtonClick(View view) {
 
-        PriceService service = DaggerApplicationComponent.builder().build().priceService();
-        service.getPrice(10.0, new Callback<Map<String, String>>() {
-            @Override
-            public void onResponse(Call<Map<String, String>> call, Response<Map<String, String>> response) {
-                if (response.isSuccessful()) {
-                    Log.i("Price", response.toString());
-                } else {
-                    Log.e("Unable to fetch converted price", response.errorBody().toString());
-                }
-            }
 
-            @Override
-            public void onFailure(Call<Map<String, String>> call, Throwable t) {
-                Log.e("Unable to fetch converted price", t.getMessage());
-            }
-        });
         if (null == email || email.isEmpty()) {
             authListener.onFailed("Please enter your emailId ");
             return;
@@ -78,7 +63,7 @@ public class AuthViewModel extends ViewModel {
     public void setupFirebaseAuth() {
         Log.d(TAG, "setupFirebaseAuth: started.");
 
-        mAuthListener =new FirebaseAuth.AuthStateListener() {
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();

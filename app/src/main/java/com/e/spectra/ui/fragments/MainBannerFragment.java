@@ -66,7 +66,7 @@ public class MainBannerFragment extends Fragment implements OnCompleteListener<Q
             bannerData = new BannerData();
             for (QueryDocumentSnapshot snapshot : task.getResult()) {
                 bannerData.setMainImageUrl(readValue(snapshot, MASTER_MAIN_BANNER_URL));
-                bannerData.setLogoImageUrl(readValue(snapshot,MASTER_LOGO_IMAGE_URL));
+                bannerData.setLogoImageUrl(readValue(snapshot, MASTER_LOGO_IMAGE_URL));
             }
         } else {
             Log.e("Main Banner", "Main Immage Loadig Error");

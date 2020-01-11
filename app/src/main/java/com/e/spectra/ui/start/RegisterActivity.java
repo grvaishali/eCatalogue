@@ -1,4 +1,4 @@
-package com.e.spectra.ui.model;
+package com.e.spectra.ui.start;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;

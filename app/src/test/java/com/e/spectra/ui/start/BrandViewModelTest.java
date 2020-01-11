@@ -1,8 +1,7 @@
-package com.e.spectra.ui.model;
+package com.e.spectra.ui.start;
 
 import android.view.View;
 
-import com.e.spectra.model.AuthViewModel;
 import com.e.spectra.model.BrandViewModel;
 import com.e.spectra.services.BrandService;
 import com.e.spectra.ui.view.BrandListener;

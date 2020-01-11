@@ -15,11 +15,12 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.e.spectra.ui.adapter.BrandsAdapter;
-import com.e.spectra.ui.fragments.OfferFragment;
+
 import com.e.spectra.ui.data.BrandData;
 import com.e.spectra.R;
 import com.e.spectra.firebase.FirebaseManager;
 import com.e.spectra.ui.AbstractCatalogueActivity;
+import com.e.spectra.ui.fragments.OfferFragment;
 import com.e.spectra.util.ViewUtil;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -166,7 +167,7 @@ public class BrandsActivity extends AbstractCatalogueActivity implements OnCompl
 ////
 ////                    }
                 //    }
-            ViewUtil.hideProgressBar(progressBar);
+                ViewUtil.hideProgressBar(progressBar);
             }
         }, 5000);
 

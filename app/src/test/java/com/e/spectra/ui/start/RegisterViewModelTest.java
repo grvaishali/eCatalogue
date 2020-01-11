@@ -1,4 +1,4 @@
-package com.e.spectra.ui.model;
+package com.e.spectra.ui.start;
 
 import android.view.View;
 

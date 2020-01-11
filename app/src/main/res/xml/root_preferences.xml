@@ -42,4 +42,14 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory app:title="@string/language">
+
+        <SwitchPreferenceCompat
+            app:key="@string/language"
+            app:title="@string/switchToFrench" />
+
+
+    </PreferenceCategory>
+
+
 </androidx.preference.PreferenceScreen>

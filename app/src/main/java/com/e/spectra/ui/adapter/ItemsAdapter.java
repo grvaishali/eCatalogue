@@ -1,6 +1,7 @@
 package com.e.spectra.ui.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.e.spectra.R;
+import com.e.spectra.constants.ECatalogueConstants;
+import com.e.spectra.ui.ItemDetailsActivity;
 import com.e.spectra.ui.data.ItemData;
 
 import java.util.ArrayList;
@@ -57,9 +60,9 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-//                        Intent intent = new Intent(context, ItemDetailsActivity.class);
-//                        intent.putExtra(ECatalogueConstants.ITEM, itemsList.get(listPosition));
-//                        context.startActivity(intent);
+                        Intent intent = new Intent(context, ItemDetailsActivity.class);
+                        intent.putExtra(ECatalogueConstants.ITEM, itemsList.get(listPosition));
+                        context.startActivity(intent);
                     }
                 }
         );

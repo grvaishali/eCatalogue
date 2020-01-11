@@ -110,6 +110,8 @@
     <string name="menu_send" translatable="false">Send</string>
     <string name="welcome" translatable="false">Welcome</string>
     <string name="contactUs" translatable="false">Contact Us</string>
-    <string name="title_activity_navigation">NavigationActivity</string>
-    <string name="items">Items</string>
+    <string name="title_activity_navigation"  translatable="false">NavigationActivity</string>
+    <string name="items" translatable="false">Items</string>
+    <string name="language" translatable="false">Language</string>
+    <string name="switchToFrench">Switch To French</string>
 </resources>

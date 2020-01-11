@@ -8,13 +8,17 @@ import android.util.Log;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.e.spectra.constants.ECatalogueConstants;
+import com.e.spectra.databinding.ActivityItemDetailsBinding;
+import com.e.spectra.model.ItemDetailViewModel;
 import com.e.spectra.ui.adapter.ItemsAdapter;
 import com.e.spectra.R;
 import com.e.spectra.ui.data.ItemData;
@@ -50,7 +54,7 @@ public class ItemsActivity extends AbstractCatalogueActivity implements OnComple
     ArrayList<ItemData> itemsList;
     FragmentManager manager;
     FragmentTransaction transaction;
-
+    ItemDetailViewModel viewModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -133,6 +137,11 @@ public class ItemsActivity extends AbstractCatalogueActivity implements OnComple
         intent.putExtra(ECatalogueConstants.BRAND, brandName);
         this.startActivity(intent);
     }
+    private void bind() {
+        ActivityItemDetailsBinding itemDetailsBinding = DataBindingUtil.setContentView(this, R.layout.activity_item_details);
+        viewModel = ViewModelProviders.of(this).get(ItemDetailViewModel.class);
+        itemDetailsBinding.setViewModel(viewModel);
 
+    }
 
 }
