@@ -26,9 +26,9 @@
 
                 app:showAsAction="never" />
             <item
-                android:id="@+id/culture"
+                android:id="@+id/addBrand"
                 android:icon="@drawable/ic_group_black_24dp"
-                android:title="Culture"
+                android:title="Add Brand"
                 app:showAsAction="never" />
 
             <item
@@ -42,6 +42,13 @@
                 android:id="@+id/contactUs"
                 android:icon="@drawable/ic_contact_phone_black_24dp"
                 android:title="Contact Us"
+
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/settings"
+                android:icon="@drawable/ic_settings_black_24dp"
+                android:title="Settings"
 
                 app:showAsAction="never" />
 

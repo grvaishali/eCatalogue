@@ -10,7 +10,7 @@
     card_view:cardCornerRadius="6dp"
     card_view:cardElevation="6dp"
     card_view:cardPreventCornerOverlap="false"
-    tools:context="com.e.ecatalogue.Activity.CategoriesActivity">
+    tools:context=".ui.CategoriesActivity">
 
 
     <androidx.appcompat.widget.LinearLayoutCompat

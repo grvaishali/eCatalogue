@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Strings related to login -->
+    <string name="sign_in">Signe</string>
+    <string name="field_name">" prénom"</string>
+    <string name="aboutUs">a propos</string>
+    <string name="confirm">Confirmer</string>
+    <string name="sign_up">Je ai déjà un compte</string>
+    <string name="new_user">Commencer</string>
+
+</resources>

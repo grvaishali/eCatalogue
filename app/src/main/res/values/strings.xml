@@ -1,88 +1,115 @@
 <resources>
-    <string name="app_name">GEEKEN</string>
+    <string name="app_name" translatable="false">Ecatalogue</string>
 
-    <string name="phone_number">PHONE NUMBER</string>
-    <string name="otp">OTP</string>
-    <string name="resend">RESEND</string>
-    <string name="hiphen">-</string>
-    <string name="verify">Verify</string>
-    <string name="send">Send OTP</string>
+    <string name="phone_number" translatable="false">PHONE NUMBER</string>
+    <string name="otp" translatable="false">OTP</string>
+    <string name="resend" translatable="false">RESEND</string>
+    <string name="hiphen" translatable="false">-</string>
+    <string name="verify" translatable="false">Verify</string>
+    <string name="send" translatable="false">Send OTP</string>
 
 
     //Databse Nodes
-    <string name="dbnode_users">users</string>
-    <string name="title_activity_settings">Settings</string>
+    <string name="dbnode_users" translatable="false">users</string>
+    <string name="title_activity_settings" translatable="false">Settings</string>
 
     <!-- Preference Titles -->
-    <string name="messages_header">Messages</string>
-    <string name="sync_header">Sync</string>
+    <string name="messages_header" translatable="false">Messages</string>
+    <string name="sync_header" translatable="false">Sync</string>
 
     <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
-    <string name="reply_title">Default reply action</string>
+    <string name="signature_title" translatable="false">Your signature</string>
+    <string name="reply_title" translatable="false">Default reply action</string>
 
     <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    <string name="sync_title" translatable="false">Sync email periodically</string>
+    <string name="attachment_title" translatable="false">Download incoming attachments</string>
+    <string name="attachment_summary_on" translatable="false">Automatically download attachments for incoming emails
     </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
-    <string name="update">update</string>
+    <string name="attachment_summary_off" translatable="false">Only download attachments when manually requested</string>
+    <string name="update" translatable="false">update</string>
     <string name="field_name">name</string>
-    <string name="collection_items">catalogue</string>
+    <string name="collection_items" translatable="false">catalogue</string>
 
 
     <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password (optional)</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="error_invalid_email">This email address is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
-    <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
+    <string name="prompt_email" translatable="false">Email</string>
+    <string name="prompt_password" translatable="false">Password (optional)</string>
+    <string name="action_sign_in" translatable="false">Sign in or register</string>
+    <string name="action_sign_in_short" translatable="false">Sign in</string>
+    <string name="error_invalid_email" translatable="false">This email address is invalid</string>
+    <string name="error_invalid_password" translatable="false">This password is too short</string>
+    <string name="error_incorrect_password" translatable="false">This password is incorrect</string>
+    <string name="error_field_required" translatable="false">This field is required</string>
+    <string name="permission_rationale" translatable="false">"Contacts permissions are needed for providing email
         completions."
     </string>
-    <string name="resend_verification_email">Resend Verification Email</string>
-    <string name="forgot_password">Forgot Password</string>
-    <string name="register">Register</string>
+    <string name="resend_verification_email" translatable="false">Resend Verification Email</string>
+    <string name="forgot_password" translatable="false">Forgot Password</string>
+    <string name="register" translatable="false">Register</string>
     <string name="sign_in">Sign In</string>
-    <string name="password">Password</string>
+    <string name="password" translatable="false">Password</string>
 
-    <string name="email_registration">Email Registration</string>
-    <string name="email">Email</string>
-    <string name="confirm_password">Confirm Password</string>
+    <string name="email_registration" translatable="false">Email Registration</string>
+    <string name="email" translatable="false">Email</string>
+    <string name="confirm_password" translatable="false">Confirm Password</string>
 
-    <string name="cancel">CANCEL</string>
+    <string name="cancel" translatable="false">CANCEL</string>
     <string name="confirm">CONFIRM</string>
-    <string name="reset_password">Reset Password</string>
-    <string name="sign_out">Sign out</string>
-    <string name="account_settings">Account Settings</string>
-    <string name="current_password">Current Password</string>
-    <string name="new_password">New Password</string>
-    <string name="confirm_new_password">Confirm New Password</string>
-    <string name="logo">Logo</string>
-    <string name="offer">Offer of the day</string>
+    <string name="reset_password" translatable="false">Reset Password</string>
+    <string name="sign_out" translatable="false">Sign out</string>
+    <string name="account_settings" translatable="false">Account Settings</string>
+    <string name="current_password" translatable="false">Current Password</string>
+    <string name="new_password" translatable="false">New Password</string>
+    <string name="confirm_new_password" translatable="false">Confirm New Password</string>
+    <string name="logo" translatable="false">Logo</string>
+    <string name="offer" translatable="false">Offer of the day</string>
 
     <!-- TODO: Remove or change this placeholder text -->
 
     <string name="sign_up">I Already Have An account</string>
     <string name="new_user">Get Started</string>
-    <string name="signIn">WELCOME!</string>
+    <string name="signIn" translatable="false">WELCOME!</string>
 
     <!--Search -->
-    <string name="app_label"> Search Feature</string>
-    <string name="search_hint">Search Fruit</string>
-    <string name="search_items">Search Items</string>
+    <string name="app_label" translatable="false"> Search Feature</string>
+    <string name="search_hint" translatable="false">Search Fruit</string>
+    <string name="search_items" translatable="false">Search Items</string>
 
     <!--About Us-->
     <string name="aboutUs"></string>
-    <string name="title_activity_about_us">AboutUsActivity</string>
+    <string name="title_activity_about_us" translatable="false">AboutUsActivity</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_culture">CultureActivity</string>
-    <string name="title_activity_contact_us">ContactUsActivity</string>
-    <string name="title_activity_terms_condition">TermsConditionActivity</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="title_activity_culture" translatable="false">CultureActivity</string>
+    <string name="title_activity_contact_us" translatable="false">ContactUsActivity</string>
+    <string name="title_activity_terms_condition" translatable="false">TermsConditionActivity</string>
+    <string name="job_scheduled" translatable="false">Job is scheduled</string>
+    <string name="no_constraint_toast" translatable="false">No Job Scheduled</string>
+    <string name="backgroundColor" translatable="false">Background Color</string>
+    <string name="foregroundColor" translatable="false">Foreground Color</string>
+    <string name="nightMode" translatable="false">Night Mode</string>
+    <string name="ON" translatable="false">ON</string>
+    <string name="OFF" translatable="false">Off</string>
+    <string name="save" translatable="false">save</string>
+    <string name="theme" translatable="false">R.style.AppTheme</string>
+    <string name="title_activity_main" translatable="false">Ecatalogue</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="nav_header_title" translatable="false">ECatalogue</string>
+    <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
+    <string name="nav_header_desc" translatable="false">Navigation header</string>
+    <string name="action_settings" translatable="false">Settings</string>
+
+    <string name="menu_home" translatable="false">Home</string>
+    <string name="menu_gallery" translatable="false">Gallery</string>
+    <string name="menu_slideshow" translatable="false">Slideshow</string>
+    <string name="menu_tools" translatable="false">Tools</string>
+    <string name="menu_share" translatable="false">Share</string>
+    <string name="menu_send" translatable="false">Send</string>
+    <string name="welcome" translatable="false">Welcome</string>
+    <string name="contactUs" translatable="false">Contact Us</string>
+    <string name="title_activity_navigation">NavigationActivity</string>
+    <string name="items">Items</string>
 </resources>
