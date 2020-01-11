@@ -29,14 +29,28 @@ eCatalogue is a mobile based product catalogue application. The purpose is remov
   - Build SDK and install it into an emulator or actual device
  
 ## Demo
-  - Home
-  ![alt text](https://github.com/shashankg1991/eCatalogue/blob/master/setup/demoimages/Home.PNG?raw=true)
-  - Login
-    ![alt text](https://github.com/shashankg1991/eCatalogue/blob/master/setup/demoimages/SignIn.PNG?raw=true)
-  - Brands
-    ![alt text](https://github.com/shashankg1991/eCatalogue/blob/master/setup/demoimages/Brands.PNG?raw=true)
-  - Categories
-    ![alt text](https://github.com/shashankg1991/eCatalogue/blob/master/setup/demoimages/Categories.PNG?raw=true)
-  - Products
-    ![alt text](https://github.com/shashankg1991/eCatalogue/blob/master/setup/demoimages/Products.PNG?raw=true)
+##### Home
+------
+![alt text](https://github.com/shashankg1991/eCatalogue/blob/master/setup/demoimages/Home.PNG?raw=true)
+
+##### Login
+------
+![alt text](https://github.com/shashankg1991/eCatalogue/blob/master/setup/demoimages/SignIn.PNG?raw=true)
+
+##### Brands
+------
+![alt text](https://github.com/shashankg1991/eCatalogue/blob/master/setup/demoimages/Brands.PNG?raw=true)
+
+##### Categories
+------
+![alt text](https://github.com/shashankg1991/eCatalogue/blob/master/setup/demoimages/Categories.PNG?raw=true)
+
+##### Products
+------
+![alt text](https://github.com/shashankg1991/eCatalogue/blob/master/setup/demoimages/Products.PNG?raw=true)
   
+
+ 
+  
+
+
