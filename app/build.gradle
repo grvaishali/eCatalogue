@@ -158,6 +158,8 @@ dependencies {
 // automated testing
     implementation 'com.squareup.assertj:assertj-android:1.1.0'
 
+    implementation 'com.android.support:preference-v7:28.1.0'
+
     //(for testing where we need access to an application context)
 //    implementation 'org.robolectric:robolectric:3.0'
 //    implementation('org.robolectric:shadows-support-v4:3.0') {
