@@ -31,7 +31,7 @@ eCatalogue is a mobile based product catalogue application. The purpose is remov
 ## Demo
 ##### Home
 ------
-![alt text](https://github.com/shashankg1991/eCatalogue/blob/master/setup/demoimages/Home.PNG?raw=true width="200" height="400")
+<img src= "https://github.com/shashankg1991/eCatalogue/blob/master/setup/demoimages/Home.PNG?raw=true" width="200" height="400")
 
 ##### Registration
 ------
