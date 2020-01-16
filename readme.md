@@ -35,31 +35,31 @@ eCatalogue is a mobile based product catalogue application. The purpose is remov
 
 ##### Registration
 ------
-![alt text](https://github.com/shashankg1991/eCatalogue/blob/master/setup/demoimages/Registration.PNG?raw=true width="200" height="400")
+<img src= "https://github.com/shashankg1991/eCatalogue/blob/master/setup/demoimages/Registration.PNG?raw=true" width="200" height="400">
 
 ##### Login
 ------
-![alt text](https://github.com/shashankg1991/eCatalogue/blob/master/setup/demoimages/SignIn.PNG?raw=true width="200" height="400")
+<img src= "https://github.com/shashankg1991/eCatalogue/blob/master/setup/demoimages/SignIn.PNG?raw=true" width="200" height="400">
 
 ##### Navigation Drawer
 ------
-![alt text](https://github.com/shashankg1991/eCatalogue/blob/master/setup/demoimages/NavigationDrawer.PNG?raw=true width="200" height="400")
+<img src= "https://github.com/shashankg1991/eCatalogue/blob/master/setup/demoimages/NavigationDrawer.PNG?raw=true" width="200" height="400">
 
 ##### Settings
 ------
-![alt text](https://github.com/shashankg1991/eCatalogue/blob/master/setup/demoimages/setting.png?raw=true width="200" height="400")
+<img src= "https://github.com/shashankg1991/eCatalogue/blob/master/setup/demoimages/setting.png?raw=true" width="200" height="400">
 
 ##### Brands
 ------
-![alt text](https://github.com/shashankg1991/eCatalogue/blob/master/setup/demoimages/Brands.PNG?raw=true width="200" height="400")
+<img src= "https://github.com/shashankg1991/eCatalogue/blob/master/setup/demoimages/Brands.PNG?raw=true" width="200" height="400">
 
 ##### Categories
 ------
-![alt text](https://github.com/shashankg1991/eCatalogue/blob/master/setup/demoimages/Categories.PNG?raw=true width="200" height="400")
+<img src= "https://github.com/shashankg1991/eCatalogue/blob/master/setup/demoimages/Categories.PNG?raw=true" width="200" height="400">
 
 ##### Products
 ------
-![alt text](https://github.com/shashankg1991/eCatalogue/blob/master/setup/demoimages/Products.PNG?raw=true width="200" height="400")
+<img src= "https://github.com/shashankg1991/eCatalogue/blob/master/setup/demoimages/Products.PNG?raw=true" width="200" height="400">
   
 
  
