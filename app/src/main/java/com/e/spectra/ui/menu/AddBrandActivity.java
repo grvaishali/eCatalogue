@@ -6,11 +6,13 @@ import android.os.Bundle;
 
 import androidx.databinding.DataBindingUtil;
 
+import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.e.spectra.R;
 
 import com.e.spectra.databinding.ActivityAddBrandBinding;
+import com.e.spectra.model.AuthViewModel;
 import com.e.spectra.model.BrandViewModel;
 import com.e.spectra.ui.AbstractCatalogueActivity;
 import com.e.spectra.ui.view.BrandListener;
@@ -22,10 +24,19 @@ import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasActivityInjector;
 
-public class AddBrandActivity extends AbstractCatalogueActivity implements HasActivityInjector, BrandListener {
+public class AddBrandActivity extends AbstractCatalogueActivity<BrandViewModel> implements HasActivityInjector, BrandListener {
+    @Inject
     BrandViewModel viewModel;
     @Inject
     DispatchingAndroidInjector<Activity> dispatchingAndroidInjector;
+    @Inject
+    ViewModelProvider.Factory factory;
+
+    @Override
+    public BrandViewModel getViewModel() {
+        viewModel=ViewModelProviders.of(this, factory).get(BrandViewModel.class);
+        return viewModel;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +47,8 @@ public class AddBrandActivity extends AbstractCatalogueActivity implements HasAc
 
     private void bind() {
         ActivityAddBrandBinding brandBinding = DataBindingUtil.setContentView(this, R.layout.activity_add_brand);
-        viewModel = ViewModelProviders.of(this).get(BrandViewModel.class);
+       getViewModel();
+        //viewModel = ViewModelProviders.of(this).get(BrandViewModel.class);
         brandBinding.setAddBrandViewModel(viewModel);
         viewModel.brandListener = this;
     }

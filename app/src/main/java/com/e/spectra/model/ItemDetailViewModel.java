@@ -1,22 +1,30 @@
 package com.e.spectra.model;
 
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.e.spectra.dagger.component.DaggerApplicationComponent;
-import com.e.spectra.services.impl.PriceServiceImpl;
+import com.e.spectra.data.repositories.impl.PriceConverterRepositoryImpl;
+import com.e.spectra.ui.menu.SettingsActivity;
 
 import java.util.Map;
+
+import javax.inject.Inject;
+import javax.inject.Singleton;
 
 import retrofit2.Call;
 
 public class ItemDetailViewModel extends ViewModel {
-    public String price = null;
+    PriceConverterRepositoryImpl priceConverterRepository;
+   public String price = null;
 
-    PriceServiceImpl priceService = DaggerApplicationComponent.create().priceService();
+  //  private PriceServiceImpl priceService = DaggerApplicationComponent.builder().build().priceService();
+
+    @Inject
+    public ItemDetailViewModel(PriceConverterRepositoryImpl priceConverterRepository) {
+        this.priceConverterRepository=priceConverterRepository;
+    }
 
 
     public Call<Map<String, String>> getCallMap() {
-        return priceService.getPrice();
+        return priceConverterRepository.convertPrice(SettingsActivity.PRICE_CONVERSION_NAME);
     }
 }

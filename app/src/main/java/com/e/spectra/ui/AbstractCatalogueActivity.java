@@ -3,23 +3,38 @@ package com.e.spectra.ui;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.lifecycle.ViewModel;
 
 import com.e.spectra.R;
-import com.e.spectra.ui.home.BrandsActivity;
 import com.e.spectra.ui.menu.AboutUsActivity;
 import com.e.spectra.ui.menu.ContactUsActivity;
 import com.e.spectra.ui.menu.TermsConditionActivity;
+import com.e.spectra.ui.navigation.NavigationActivity;
 import com.e.spectra.util.LocaleHelper;
 
+import dagger.android.support.DaggerAppCompatActivity;
 
-public abstract class AbstractCatalogueActivity extends AppCompatActivity {
+
+public abstract class AbstractCatalogueActivity<T extends ViewModel> extends DaggerAppCompatActivity {
     private int AddBrand_Request_Code = 1;
+    private T viewModel;
 
+    /**
+     * @return view model instance
+     */
+    public abstract T getViewModel();
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        this.viewModel = viewModel == null ? getViewModel() : viewModel;
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -39,7 +54,7 @@ public abstract class AbstractCatalogueActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             // Respond to the action bar's Up/Home button
             case R.id.home:
-                startActivity(new Intent(getApplicationContext(), BrandsActivity.class));
+                startActivity(new Intent(getApplicationContext(), NavigationActivity.class));
                 return true;
 
 

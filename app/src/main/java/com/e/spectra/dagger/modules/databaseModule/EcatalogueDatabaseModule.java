@@ -1,8 +1,6 @@
-package com.e.spectra.dagger.daggerModule.databaseModule;
+package com.e.spectra.dagger.modules.databaseModule;
 
 import android.content.Context;
-
-import androidx.room.Room;
 
 import com.e.spectra.data.dao.BrandDao;
 import com.e.spectra.data.database.EcatalogueRoomDatabase;

@@ -7,19 +7,13 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.e.spectra.dagger.component.DaggerApplicationComponent;
-
-import com.e.spectra.services.PriceService;
-import com.e.spectra.services.impl.UserServiceImp;
+import com.e.spectra.data.repositories.impl.UserRespositoryImpl;
 import com.e.spectra.ui.view.AuthListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import java.util.Map;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import javax.inject.Inject;
+import javax.inject.Singleton;
 
 import static com.crashlytics.android.beta.Beta.TAG;
 import static com.google.firebase.auth.FirebaseAuth.getInstance;
@@ -30,7 +24,13 @@ public class AuthViewModel extends ViewModel {
     public AuthListener authListener;
 
     private FirebaseAuth.AuthStateListener mAuthListener;
-    UserServiceImp user = DaggerApplicationComponent.builder().build().userService();
+    UserRespositoryImpl user;
+
+    @Inject
+    public AuthViewModel(UserRespositoryImpl user) {
+        this.user = user;
+
+    }
 
     public void onLoginButtonClick(View view) {
         authListener.onStarted();

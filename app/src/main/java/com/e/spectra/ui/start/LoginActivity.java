@@ -15,9 +15,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.e.spectra.R;
@@ -30,6 +32,7 @@ import com.e.spectra.ui.view.AuthListener;
 import com.e.spectra.util.ViewUtil;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -38,17 +41,30 @@ import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasActivityInjector;
 
 
-public class LoginActivity extends AbstractCatalogueActivity implements ComponentCallbacks2, AuthListener, HasActivityInjector {
+public class LoginActivity extends AbstractCatalogueActivity<AuthViewModel> implements ComponentCallbacks2, AuthListener, HasActivityInjector {
     @BindView(R.id.loginProgressBar)
     ProgressBar mProgressBar;
     private JobScheduler mScheduler;
+
     AuthViewModel viewModel;
     private static final int JOB_ID = 0;
     @BindView(R.id.forgot_password)
     TextView resetPassword;
 
+
     @Inject
     DispatchingAndroidInjector<Activity> dispatchingAndroidInjector;
+
+    @Inject
+    @Named("AuthViewModel")
+    ViewModelProvider.Factory factory;
+
+    @Override
+    public AuthViewModel getViewModel() {
+        viewModel = ViewModelProviders.of(this, factory).get(AuthViewModel.class);
+        return viewModel;
+    }
+
 
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -60,13 +76,13 @@ public class LoginActivity extends AbstractCatalogueActivity implements Componen
         bind();
         ButterKnife.bind(this);
 
-        hideSoftKeyboard();
+     //   hideSoftKeyboard();
 
         mScheduler = (JobScheduler) getSystemService(JOB_SCHEDULER_SERVICE);
     }
 
     private void bind() {
-      ActivityLoginBinding loginBinding = DataBindingUtil.setContentView(this, R.layout.activity_login);
+        ActivityLoginBinding loginBinding = DataBindingUtil.setContentView(this, R.layout.activity_login);
         viewModel = ViewModelProviders.of(this).get(AuthViewModel.class);
         loginBinding.setViewModel(viewModel);
         viewModel.authListener = this;
@@ -108,10 +124,10 @@ public class LoginActivity extends AbstractCatalogueActivity implements Componen
 
     }
 
-@Override
-    public void hideSoftKeyboard() {
-        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-    }
+//    @Override
+//    public void hideSoftKeyboard() {
+//        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+//    }
 
     @Override
     public void onStarted() {
