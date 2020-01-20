@@ -8,6 +8,8 @@ import android.view.WindowManager;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -33,7 +35,7 @@ import static com.e.spectra.constants.FirebaseManageConstants.CATEGORIES_ALL;
 import static com.e.spectra.constants.FirebaseManageConstants.CATEGORY_BRAND;
 import static com.e.spectra.constants.FirebaseManageConstants.CATEGORY_NAME;
 
-public class CategoriesActivity extends AbstractCatalogueActivity implements OnCompleteListener<QuerySnapshot> {
+public class CategoriesActivity extends AppCompatActivity implements OnCompleteListener<QuerySnapshot> {
 
     private CategoriesAdapter categoriesAdapter;
     @BindView(R.id.categories_view)
@@ -43,6 +45,11 @@ public class CategoriesActivity extends AbstractCatalogueActivity implements OnC
     ArrayList<CategoryData> categoryList;
     @BindView(R.id.editText_category_search)
     EditText categorySearchEditText;
+
+//    @Override
+//    public ViewModel getViewModel() {
+//        return null;
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,13 +122,13 @@ public class CategoriesActivity extends AbstractCatalogueActivity implements OnC
     public void getCategoriesView() {
         recyclerCategoriesView.setHasFixedSize(true);
         FirebaseManager.getInstance().getAllCategories(this, brandName);
-        hideSoftKeyboard();
+      //  hideSoftKeyboard();
     }
 
 
-    @Override
-    public void hideSoftKeyboard() {
-        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-    }
+//    @Override
+//    public void hideSoftKeyboard() {
+//        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+//    }
 
 }

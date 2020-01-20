@@ -42,7 +42,6 @@ public class ItemDetailsActivity extends AbstractCatalogueActivity<ItemDetailVie
     ItemDetailViewModel viewModel;
 
     @Inject
-
     @Named("ItemDetailViewModel")
     ViewModelProvider.Factory factory;
     // Call<Map<String, String>> map;

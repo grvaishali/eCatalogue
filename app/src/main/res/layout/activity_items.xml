@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.e.spectra.model.ItemDetailViewModel" />
+            type="com.e.spectra.model.ItemViewModel" />
     </data>
 <LinearLayout
     android:layout_width="match_parent"

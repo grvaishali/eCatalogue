@@ -11,24 +11,30 @@ import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.e.spectra.R;
 import com.e.spectra.constants.ECatalogueConstants;
 import com.e.spectra.databinding.ActivityItemDetailsBinding;
-import com.e.spectra.model.ItemDetailViewModel;
-import com.e.spectra.ui.adapter.ItemsAdapter;
-import com.e.spectra.R;
-import com.e.spectra.ui.data.ItemData;
+import com.e.spectra.databinding.ActivityItemsBindingImpl;
 import com.e.spectra.firebase.FirebaseManager;
+import com.e.spectra.model.ItemDetailViewModel;
+import com.e.spectra.model.ItemViewModel;
+import com.e.spectra.ui.adapter.ItemsAdapter;
+import com.e.spectra.ui.data.ItemData;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -41,7 +47,7 @@ import static com.e.spectra.constants.FirebaseManageConstants.ITEM_IMAGEURL;
 import static com.e.spectra.constants.FirebaseManageConstants.ITEM_NAME;
 import static com.e.spectra.constants.FirebaseManageConstants.ITEM_PRICE;
 
-public class ItemsActivity extends AbstractCatalogueActivity implements OnCompleteListener<QuerySnapshot> {
+public class ItemsActivity extends AbstractCatalogueActivity<ItemViewModel> implements OnCompleteListener<QuerySnapshot> {
 
     private static ItemsAdapter itemsAdapter;
     @BindView(R.id.items_view)
@@ -54,11 +60,24 @@ public class ItemsActivity extends AbstractCatalogueActivity implements OnComple
     ArrayList<ItemData> itemsList;
     FragmentManager manager;
     FragmentTransaction transaction;
-    ItemDetailViewModel viewModel;
+
+    @Inject
+    ItemViewModel viewModel;
+
+    @Inject
+    @Named("ItemViewModel")
+    ViewModelProvider.Factory factory;
+
+    @Override
+    public ItemViewModel getViewModel() {
+        viewModel = ViewModelProviders.of(this, factory).get(ItemViewModel.class);
+        return viewModel;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_items);
+        bind();
         ButterKnife.bind(this);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         manager = getSupportFragmentManager();
@@ -117,7 +136,7 @@ public class ItemsActivity extends AbstractCatalogueActivity implements OnComple
     public void getItemsView() {
         recyclerItemsView.setHasFixedSize(true);
         FirebaseManager.getInstance().getAllItems(this, categoryName, brandName);
-        hideSoftKeyboard();
+        //  hideSoftKeyboard();
     }
 
     public void filterItems(String searchString) {
@@ -137,9 +156,10 @@ public class ItemsActivity extends AbstractCatalogueActivity implements OnComple
         intent.putExtra(ECatalogueConstants.BRAND, brandName);
         this.startActivity(intent);
     }
+
     private void bind() {
-        ActivityItemDetailsBinding itemDetailsBinding = DataBindingUtil.setContentView(this, R.layout.activity_item_details);
-        viewModel = ViewModelProviders.of(this).get(ItemDetailViewModel.class);
+        ActivityItemsBindingImpl itemDetailsBinding = DataBindingUtil.setContentView(this, R.layout.activity_items);
+        // viewModel = ViewModelProviders.of(this).get(ItemDetailViewModel.class);
         itemDetailsBinding.setViewModel(viewModel);
 
     }
