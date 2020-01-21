@@ -14,6 +14,7 @@ import retrofit2.Call;
 
 public class ItemDetailViewModel extends ViewModel {
     PriceConverterRepositoryImpl priceConverterRepository;
+
    public String price = null;
 
   //  private PriceServiceImpl priceService = DaggerApplicationComponent.builder().build().priceService();

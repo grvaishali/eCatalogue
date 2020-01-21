@@ -9,7 +9,7 @@ import retrofit2.Callback;
 
 public interface PriceService {
 
-    Call<Map<String, String>> getPrice();
+    Call<Map<String, String>> getPrice(String priceConversionName);
 
   
 }

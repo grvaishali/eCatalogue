@@ -15,8 +15,6 @@ import java.util.Map;
 import dagger.android.AndroidInjector;
 import dagger.android.support.DaggerApplication;
 import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class EcatalogueApplication extends dagger.android.support.DaggerApplication {
     static Call<Map<String, String>> map;
@@ -59,33 +57,13 @@ public class EcatalogueApplication extends dagger.android.support.DaggerApplicat
         ArrayList list = new ArrayList();
         list.add("INR_USD");
         list.add("USD_INR");
-        Map currencyPrice = new HashMap();
+        HashMap<String,String> hashMap=new HashMap<String,String>();
+        hashMap.put("INR_USD","70.0");
+        hashMap.put("USD_INR","0.40");
         int i;
 
-        for (i = 0; i < list.size(); i++) {
-            map = repository.convertPrice(list.get(i).toString());
-            map.enqueue(new Callback<Map<String, String>>() {
-                int j = 0;
 
-                @Override
-                public void onResponse(Call<Map<String, String>> call, Response<Map<String, String>> response) {
-                    if (response.isSuccessful()) {
-
-                        currencyPrice.put(list.get(j), response.body().get(list.get(j)));
-                        j++;
-
-                    } else {
-                        // error response, no access to resource?
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<Map<String, String>> call, Throwable t) {
-
-                }
-            });
-        }
-        return currencyPrice;
+        return hashMap;
     }
 
     protected void onPostExecute(Long result) {
