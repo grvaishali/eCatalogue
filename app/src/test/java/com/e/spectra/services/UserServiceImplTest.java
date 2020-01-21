@@ -1,13 +1,11 @@
 package com.e.spectra.services;
 
-import android.app.Application;
 import android.content.Context;
 
 import com.e.spectra.dagger.component.DaggerApplicationComponent;
-import com.e.spectra.data.repositories.impl.UserRespositoryImpl;
-import com.e.spectra.firebase.FirebaseManager;
-import com.e.spectra.services.impl.UserServiceImp;
-import com.google.firebase.FirebaseApp;
+import com.e.spectra.domain.model.repositories.impl.UserRespositoryImpl;
+import com.e.spectra.data.firebase.FirebaseManager;
+import com.e.spectra.domain.model.services.impl.UserServiceImp;
 
 import org.junit.Before;
 import org.junit.Test;

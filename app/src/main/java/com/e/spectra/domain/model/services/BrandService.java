@@ -1,4 +1,4 @@
-package com.e.spectra.services;
+package com.e.spectra.domain.model.services;
 
 import android.content.Context;
 

@@ -1,4 +1,4 @@
-package com.e.spectra.services;
+package com.e.spectra.domain.model.services;
 
 import androidx.lifecycle.LiveData;
 

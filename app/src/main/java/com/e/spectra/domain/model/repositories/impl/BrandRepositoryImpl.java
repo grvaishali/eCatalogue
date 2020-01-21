@@ -1,15 +1,13 @@
-package com.e.spectra.data.repositories.impl;
+package com.e.spectra.domain.model.repositories.impl;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import androidx.room.Room;
+
 import com.e.spectra.data.dao.BrandDao;
 import com.e.spectra.data.database.EcatalogueRoomDatabase;
 import com.e.spectra.data.entity.Brand;
-import com.e.spectra.data.repositories.BrandRepository;
+import com.e.spectra.domain.model.repositories.BrandRepository;
 import javax.inject.Inject;
-
-import dagger.android.AndroidInjector;
 
 public class BrandRepositoryImpl implements BrandRepository {
 

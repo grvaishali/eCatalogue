@@ -7,12 +7,12 @@
 
         <variable
             name="viewModel"
-            type="com.e.spectra.model.ItemDetailViewModel" />
+            type="com.e.spectra.domain.model.ItemDetailViewModel" />
     </data>
 <TableLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.ItemDetailsActivity">
+    tools:context=".presentation.ItemDetailsActivity">
 
     <TableRow>
 

@@ -1,9 +1,9 @@
-package com.e.spectra.model;
+package com.e.spectra.domain.model;
 
 import androidx.lifecycle.ViewModel;
 
-import com.e.spectra.data.repositories.impl.PriceConverterRepositoryImpl;
-import com.e.spectra.ui.menu.SettingsActivity;
+import com.e.spectra.domain.model.repositories.impl.PriceConverterRepositoryImpl;
+import com.e.spectra.presentation.menu.SettingsActivity;
 
 import java.util.Map;
 

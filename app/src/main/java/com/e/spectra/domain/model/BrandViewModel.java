@@ -1,4 +1,4 @@
-package com.e.spectra.model;
+package com.e.spectra.domain.model;
 
 
 import android.app.Application;
@@ -7,12 +7,11 @@ import android.view.View;
 
 import androidx.lifecycle.ViewModel;
 
-import com.e.spectra.data.repositories.impl.BrandRepositoryImpl;
-import com.e.spectra.services.BrandService;
-import com.e.spectra.ui.view.BrandListener;
+import com.e.spectra.domain.model.repositories.impl.BrandRepositoryImpl;
+import com.e.spectra.domain.model.services.BrandService;
+import com.e.spectra.presentation.view.BrandListener;
 
 import javax.inject.Inject;
-import javax.inject.Singleton;
 
 
 public class BrandViewModel extends ViewModel {
@@ -22,11 +21,11 @@ public class BrandViewModel extends ViewModel {
     BrandService brandService;
     Application application;
     Context context;
-    BrandRepositoryImpl brandRepository;
+
 
     @Inject
-    public BrandViewModel(BrandRepositoryImpl brandRepository) {
-        this.brandRepository = brandRepository;
+    public BrandViewModel(BrandService bradService) {
+        this.brandService=bradService;
     }
 
     public void onAddBrandClick(View view) {
@@ -37,7 +36,7 @@ public class BrandViewModel extends ViewModel {
             brandListener.onFailed("Please enter brandName");
             return;
         }
-        brandRepository.addBrand(brandName, context);
+        brandService.add(brandName, context);
         brandListener.onInsert("Data Inserted");
 
 

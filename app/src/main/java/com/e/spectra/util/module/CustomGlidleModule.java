@@ -1,4 +1,4 @@
-package com.e.spectra.module;
+package com.e.spectra.util.module;
 
 import android.content.Context;
 

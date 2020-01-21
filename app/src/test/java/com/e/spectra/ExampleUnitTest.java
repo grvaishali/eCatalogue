@@ -1,6 +1,6 @@
 package com.e.spectra;
 
-import com.e.spectra.ui.ItemsActivity;
+import com.e.spectra.presentation.ItemsActivity;
 
 import org.junit.Test;
 

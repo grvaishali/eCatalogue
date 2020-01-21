@@ -3,9 +3,9 @@ package com.e.spectra.ui.start;
 
 import android.view.View;
 
-import com.e.spectra.model.AuthViewModel;
-import com.e.spectra.services.impl.UserServiceImp;
-import com.e.spectra.ui.view.AuthListener;
+import com.e.spectra.domain.model.AuthViewModel;
+import com.e.spectra.domain.model.services.impl.UserServiceImp;
+import com.e.spectra.presentation.view.AuthListener;
 
 import org.junit.Before;
 import org.junit.Test;

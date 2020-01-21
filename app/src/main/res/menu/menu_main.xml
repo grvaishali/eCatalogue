@@ -25,11 +25,7 @@
                 android:title="About Us"
 
                 app:showAsAction="never" />
-            <item
-                android:id="@+id/addBrand"
-                android:icon="@drawable/ic_group_black_24dp"
-                android:title="Add Brand"
-                app:showAsAction="never" />
+
 
             <item
                 android:id="@+id/termsCondition"
@@ -45,12 +41,7 @@
 
                 app:showAsAction="never" />
 
-            <item
-                android:id="@+id/settings"
-                android:icon="@drawable/ic_settings_black_24dp"
-                android:title="Settings"
 
-                app:showAsAction="never" />
 
 
 

@@ -2,9 +2,9 @@ package com.e.spectra.ui.start;
 
 import android.view.View;
 
-import com.e.spectra.model.BrandViewModel;
-import com.e.spectra.services.BrandService;
-import com.e.spectra.ui.view.BrandListener;
+import com.e.spectra.domain.model.BrandViewModel;
+import com.e.spectra.domain.model.services.BrandService;
+import com.e.spectra.presentation.view.BrandListener;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -25,7 +25,7 @@ public class BrandViewModelTest {
     BrandService brandService;
 
     @InjectMocks
-    private BrandViewModel brand = new BrandViewModel();
+    private BrandViewModel brand = new BrandViewModel(brandRepository);
 
     @Before
     public void setUp() {

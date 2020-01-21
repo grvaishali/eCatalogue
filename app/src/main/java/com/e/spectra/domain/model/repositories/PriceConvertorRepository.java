@@ -1,4 +1,4 @@
-package com.e.spectra.data.repositories;
+package com.e.spectra.domain.model.repositories;
 
 
 import androidx.lifecycle.LiveData;

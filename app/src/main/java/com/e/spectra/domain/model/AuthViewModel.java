@@ -1,4 +1,4 @@
-package com.e.spectra.model;
+package com.e.spectra.domain.model;
 
 import android.util.Log;
 import android.view.View;
@@ -7,13 +7,12 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.e.spectra.data.repositories.impl.UserRespositoryImpl;
-import com.e.spectra.ui.view.AuthListener;
+import com.e.spectra.domain.model.repositories.impl.UserRespositoryImpl;
+import com.e.spectra.presentation.view.AuthListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import javax.inject.Inject;
-import javax.inject.Singleton;
 
 import static com.crashlytics.android.beta.Beta.TAG;
 import static com.google.firebase.auth.FirebaseAuth.getInstance;

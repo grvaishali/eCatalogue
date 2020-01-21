@@ -2,7 +2,7 @@ package com.e.spectra.dagger.modules.fragment;
 
 import androidx.lifecycle.ViewModelProvider;
 
-import com.e.spectra.ui.fragments.AbstractCatalogueFragment;
+import com.e.spectra.presentation.fragments.AbstractCatalogueFragment;
 
 import javax.inject.Named;
 

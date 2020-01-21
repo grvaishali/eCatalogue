@@ -1,15 +1,14 @@
-package com.e.spectra.model;
+package com.e.spectra.domain.model;
 
 import android.view.View;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.e.spectra.data.repositories.impl.UserRespositoryImpl;
-import com.e.spectra.ui.view.AuthListener;
+import com.e.spectra.domain.model.repositories.impl.UserRespositoryImpl;
+import com.e.spectra.presentation.view.AuthListener;
 
 import javax.inject.Inject;
-import javax.inject.Singleton;
 
 public class RegisterViewModel extends ViewModel {
 

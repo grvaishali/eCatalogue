@@ -1,10 +1,10 @@
-package com.e.spectra.services.impl;
+package com.e.spectra.domain.model.services.impl;
 
 import androidx.lifecycle.LiveData;
 
 
-import com.e.spectra.data.repositories.impl.UserRespositoryImpl;
-import com.e.spectra.services.UserService;
+import com.e.spectra.domain.model.repositories.impl.UserRespositoryImpl;
+import com.e.spectra.domain.model.services.UserService;
 
 import javax.inject.Inject;
 

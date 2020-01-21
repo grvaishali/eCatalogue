@@ -1,4 +1,4 @@
-package com.e.spectra.data.repositories.impl;
+package com.e.spectra.domain.model.repositories.impl;
 
 import android.util.Log;
 
@@ -6,7 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.e.spectra.data.repositories.UserRepository;
+import com.e.spectra.domain.model.repositories.UserRepository;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;

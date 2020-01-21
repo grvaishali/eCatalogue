@@ -8,14 +8,14 @@
 
         <variable
             name="addBrandViewModel"
-            type="com.e.spectra.model.BrandViewModel" />
+            type="com.e.spectra.domain.model.BrandViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerVertical="true"
-        tools:context=".ui.home.BrandsActivity">
+        tools:context=".presentation.home.BrandsActivity">
 
         <TextView
             android:id="@+id/addBrandText"

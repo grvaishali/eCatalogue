@@ -1,7 +1,7 @@
-package com.e.spectra.services.impl;
+package com.e.spectra.domain.model.services.impl;
 
-import com.e.spectra.data.repositories.impl.PriceConverterRepositoryImpl;
-import com.e.spectra.services.PriceService;
+import com.e.spectra.domain.model.repositories.impl.PriceConverterRepositoryImpl;
+import com.e.spectra.domain.model.services.PriceService;
 
 import java.util.Map;
 

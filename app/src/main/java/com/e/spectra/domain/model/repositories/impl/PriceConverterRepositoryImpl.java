@@ -1,9 +1,8 @@
-package com.e.spectra.data.repositories.impl;
+package com.e.spectra.domain.model.repositories.impl;
 
 import com.e.spectra.BuildConfig;
-import com.e.spectra.dagger.component.DaggerApplicationComponent;
 import com.e.spectra.data.network.remote.RestApi;
-import com.e.spectra.data.repositories.PriceConvertorRepository;
+import com.e.spectra.domain.model.repositories.PriceConvertorRepository;
 
 import java.util.Map;
 

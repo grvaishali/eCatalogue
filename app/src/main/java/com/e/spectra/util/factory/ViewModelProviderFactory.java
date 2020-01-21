@@ -1,4 +1,4 @@
-package com.e.spectra.util;
+package com.e.spectra.util.factory;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;

@@ -5,7 +5,7 @@ import android.content.Context;
 
 import com.e.spectra.dagger.component.ApplicationComponent;
 import com.e.spectra.dagger.component.DaggerApplicationComponent;
-import com.e.spectra.data.repositories.impl.PriceConverterRepositoryImpl;
+import com.e.spectra.domain.model.repositories.impl.PriceConverterRepositoryImpl;
 import com.e.spectra.util.LocaleHelper;
 
 import java.util.ArrayList;
@@ -62,7 +62,32 @@ public class EcatalogueApplication extends dagger.android.support.DaggerApplicat
         hashMap.put("USD_INR","0.40");
         int i;
 
+        for (i = 0; i < 2; i++) {
+//            map = repository.convertPrice("INR_USD");
+//            map.enqueue(new Callback<Map<String, String>>() {
+//                int j = 0;
+//
+//                @Override
+//                public void onResponse(Call<Map<String, String>> call, Response<Map<String, String>> response) {
+//                    if (response.isSuccessful()) {
+//
+//                     hashMap.put(list.get(j).toString(), response.body().get(list.get(j)));
+//                        j++;
+//
+//                    }
+//
+//                    else {
+//                        // error response, no access to resource?
+//                    }
+//                }
+//
+//                @Override
+//                public void onFailure(Call<Map<String, String>> call, Throwable t) {
+//
+//                }
+//            });
 
+        }
         return hashMap;
     }
 

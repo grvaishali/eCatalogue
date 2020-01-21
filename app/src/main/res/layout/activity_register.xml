@@ -6,13 +6,13 @@
 
         <variable
             name="registerViewModel"
-            type="com.e.spectra.model.RegisterViewModel" />
+            type="com.e.spectra.domain.model.RegisterViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.start.RegisterActivity">
+        tools:context=".presentation.start.RegisterActivity">
 
 
         <RelativeLayout

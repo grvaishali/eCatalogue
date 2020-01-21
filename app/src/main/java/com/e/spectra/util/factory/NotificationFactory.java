@@ -1,4 +1,4 @@
-package com.e.spectra.factory;
+package com.e.spectra.util.factory;
 
 import android.app.Notification;
 import android.app.NotificationChannel;

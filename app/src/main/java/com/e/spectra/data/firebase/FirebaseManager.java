@@ -1,14 +1,13 @@
-package com.e.spectra.firebase;
+package com.e.spectra.data.firebase;
 
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import com.e.spectra.ui.data.UserData;
+import com.e.spectra.presentation.data.UserData;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;

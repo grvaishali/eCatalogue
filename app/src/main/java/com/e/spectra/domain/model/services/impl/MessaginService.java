@@ -1,4 +1,4 @@
-package com.e.spectra.services.impl;
+package com.e.spectra.domain.model.services.impl;
 
 import android.util.Log;
 

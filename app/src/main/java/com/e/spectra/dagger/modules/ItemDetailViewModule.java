@@ -2,13 +2,11 @@ package com.e.spectra.dagger.modules;
 
 import androidx.lifecycle.ViewModelProvider;
 
-import com.e.spectra.data.repositories.impl.ItemRepositoryImpl;
-import com.e.spectra.data.repositories.impl.PriceConverterRepositoryImpl;
-import com.e.spectra.model.ItemDetailViewModel;
-import com.e.spectra.util.ViewModelProviderFactory;
+import com.e.spectra.domain.model.repositories.impl.PriceConverterRepositoryImpl;
+import com.e.spectra.domain.model.ItemDetailViewModel;
+import com.e.spectra.util.factory.ViewModelProviderFactory;
 
 import javax.inject.Named;
-import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
